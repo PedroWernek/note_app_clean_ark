@@ -7,6 +7,11 @@ plugins {
 }
 
 android {
+    compileOptions {
+        sourceCompatibility = JavaVersion.VERSION_1_8
+        targetCompatibility = JavaVersion.VERSION_1_8
+    }
+
     namespace = "com.notation.notioncleancodeapp"
     compileSdk = 36
 
@@ -62,6 +67,10 @@ dependencies {
     debugImplementation(libs.androidx.ui.test.manifest)
     implementation("com.google.dagger:hilt-android:2.56.2")
     ksp("com.google.dagger:hilt-android-compiler:2.56.2")
+    implementation("androidx.hilt:hilt-navigation-compose:1.2.0")
+    val nav_version = "2.9.3"
+
+    implementation("androidx.navigation:navigation-compose:$nav_version")
 
 }
 

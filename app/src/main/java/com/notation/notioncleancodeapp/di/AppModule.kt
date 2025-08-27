@@ -7,6 +7,7 @@ import com.notation.notioncleancodeapp.feature_note.data.repository.NoteReposito
 import com.notation.notioncleancodeapp.feature_note.domain.repository.NoteRepository
 import com.notation.notioncleancodeapp.feature_note.domain.use_case.AddNoteUseCase
 import com.notation.notioncleancodeapp.feature_note.domain.use_case.DeleteNoteUseCase
+import com.notation.notioncleancodeapp.feature_note.domain.use_case.GetNoteUseCase
 import com.notation.notioncleancodeapp.feature_note.domain.use_case.GetNotesUseCase
 import com.notation.notioncleancodeapp.feature_note.domain.use_case.NoteUseCases
 import dagger.Module
@@ -41,7 +42,8 @@ class AppModule {
          return NoteUseCases(
              getNotesUseCase = GetNotesUseCase(repository),
              deleteNoteUseCase = DeleteNoteUseCase(repository),
-             addNoteUseCase = AddNoteUseCase(repository)
+             addNoteUseCase = AddNoteUseCase(repository),
+             getNoteUseCase = GetNoteUseCase(repository)
          )
     }
 }
